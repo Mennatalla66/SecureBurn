@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081226">
+  <title>Open Secret Message — SecureBurn</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='view.js') }}" defer></script>
+</head>
+<body data-message-id="{{ message_id }}">
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brand-mark"><span>◆</span></span><span class="brand-copy"><strong>Secure<span>Burn</span></strong><small>Secret messages. Self-destruct.</small></span></a>
+      <div class="top-security"><span class="shield">⬡</span><span>One-time secret message</span></div>
+    </header>
+    <main class="reader-wrap">
+      <section class="panel reader-panel">
+        <div class="intro">
+          <div class="intro-icon">⬡</div>
+          <div><p class="eyebrow">PRIVATE MESSAGE</p><h1>Open your message</h1><p class="subtitle">This message is available for one successful access attempt.</p></div>
+        </div>
+        <div id="status" class="status reader-status" role="status" aria-live="polite">Checking the secret link…</div>
+        <section id="messageBox" class="message-output hidden">
+          <label class="field-label" for="decryptedMessage">Decrypted message</label>
+          <pre id="decryptedMessage"></pre>
+          <p class="warning">This message has been opened. You cannot use this link again. Screenshots or copies cannot be prevented.</p>
+        </section>
+      </section>
+      <footer class="page-footer">SecureBurn · Educational prototype</footer>
+    </main>
+  </div>
+</body>
+</html>
